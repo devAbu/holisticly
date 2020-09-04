@@ -1,0 +1,78 @@
+@primaryColor: rgb(113, 151, 255);
+@secondaryColor: darken(white, 15%);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @secondaryColor;
+  margin-left: 20%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: white;
+
+  h1 {
+    color: @primaryColor;
+    margin-left: 2rem;
+  }
+
+  a {
+    margin: 1em 0 1em 2rem;
+    display: block;
+    color: black;
+    text-decoration: none;
+
+  }
+
+  div.online-services,
+  div.on-side-services {
+    h3 {
+      margin-left: 1rem;
+      color: @secondaryColor;
+    }
+  }
+
+  .active {
+    color: darken(@primaryColor, 15%);
+    text-decoration: none;
+  }
+
+  button {
+    margin-left: 1rem;
+    color: white;
+    background-color: @primaryColor;
+    border: none;
+    border-radius: 5%;
+    padding: 12px 30px;
+    font-size: 20px;
+  }
+}
+
+.navbar {
+
+  float: right;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-width: 75px;
+    width: 100%;
+    float: left;
+    border-radius: 50%;
+  }
+
+  h1,
+  p {
+    margin: 0 20px;
+  }
+
+
+}

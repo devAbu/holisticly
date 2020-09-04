@@ -1,0 +1,32 @@
+{
+  "name": "holisticly",
+  "version": "1.0.0",
+  "description": "Holisticly Web application - Wellness Resorts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devAbu/holisticly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devAbu/holisticly/issues"
+  },
+  "homepage": "https://github.com/devAbu/holisticly#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 8080
+    }
+  }
+}
