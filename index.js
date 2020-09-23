@@ -19,27 +19,27 @@ app.get('/', (req, res) => {
 })
 
 app.get('/services', (req, res) => {
-  console.log('Services')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/coaching', (req, res) => {
-  console.log('Coaching')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/media', (req, res) => {
-  console.log('Media')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/treatments', (req, res) => {
-  console.log('Treatments')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/wellbeing/test', (req, res) => {
-  console.log('Wellbeing')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/details', (req, res) => {
-  console.log('Details')
+  res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
 
 app.get('/blog', (req, res) => {

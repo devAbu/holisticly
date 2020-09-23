@@ -15,28 +15,31 @@ body {
   background-color: white;
 }
 .sidenav h1 {
-  color: #7197ff;
+  color: #38ffbd;
   margin-left: 2rem;
+  font-size: 36px;
 }
 .sidenav a {
   margin: 1em 0 1em 2rem;
   display: block;
   color: black;
   text-decoration: none;
+  font-size: 20px;
 }
 .sidenav div.online-services h3,
 .sidenav div.on-side-services h3 {
   margin-left: 1rem;
   color: #d9d9d9;
+  font-size: 22px;
 }
 .sidenav .active {
-  color: #245fff;
+  color: #00eb9d;
   text-decoration: none;
 }
-.sidenav button {
+.btn {
   margin-left: 1rem;
   color: white;
-  background-color: #7197ff;
+  background-color: #38ffbd;
   border: none;
   border-radius: 5%;
   padding: 12px 30px;
@@ -49,7 +52,7 @@ body {
   align-items: center;
 }
 .navbar img {
-  max-width: 75px;
+  max-width: 55px;
   width: 100%;
   float: left;
   border-radius: 50%;
@@ -57,4 +60,79 @@ body {
 .navbar h1,
 .navbar p {
   margin: 0 20px;
+}
+.main {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+.main h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+}
+.main .check {
+  position: absolute;
+  margin-top: 5%;
+}
+.main .checkbox-label {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+.main input[type="checkbox"] {
+  display: none;
+}
+.main .checkbox-label::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 75px;
+  border-right: 10px solid #38ffbd;
+  border-bottom: 10px solid #38ffbd;
+  top: 20%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotateZ(40deg);
+}
+.main div.box {
+  display: inline-table;
+  background-color: #38ffbd;
+  padding: 25px 50px;
+  text-align: left;
+  margin-left: 15%;
+  border-radius: 15px;
+  margin-bottom: 5%;
+}
+.main div.box h1 {
+  font-size: 36px;
+}
+.main div.box p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.main div.box h1,
+.main div.box p {
+  padding-left: 20%;
+  color: white;
+}
+.main div.box button.btn {
+  margin-top: 5%;
+  float: right;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+.row {
+  margin-left: 5%;
+}
+.col-2 {
+  max-width: 16.666667%;
+}
+.col-10 {
+  max-width: 83.333333%;
 }

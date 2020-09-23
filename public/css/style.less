@@ -1,4 +1,4 @@
-@primaryColor: rgb(113, 151, 255);
+@primaryColor: rgb(56, 255, 189);
 @secondaryColor: darken(white, 15%);
 
 body {
@@ -21,6 +21,7 @@ body {
   h1 {
     color: @primaryColor;
     margin-left: 2rem;
+    font-size: 36px;
   }
 
   a {
@@ -28,7 +29,7 @@ body {
     display: block;
     color: black;
     text-decoration: none;
-
+    font-size: 20px;
   }
 
   div.online-services,
@@ -36,6 +37,7 @@ body {
     h3 {
       margin-left: 1rem;
       color: @secondaryColor;
+      font-size: 22px;
     }
   }
 
@@ -43,27 +45,26 @@ body {
     color: darken(@primaryColor, 15%);
     text-decoration: none;
   }
+}
 
-  button {
-    margin-left: 1rem;
-    color: white;
-    background-color: @primaryColor;
-    border: none;
-    border-radius: 5%;
-    padding: 12px 30px;
-    font-size: 20px;
-  }
+.btn {
+  margin-left: 1rem;
+  color: white;
+  background-color: @primaryColor;
+  border: none;
+  border-radius: 5%;
+  padding: 12px 30px;
+  font-size: 20px;
 }
 
 .navbar {
-
   float: right;
   margin-top: 1em;
   display: flex;
   align-items: center;
 
   img {
-    max-width: 75px;
+    max-width: 55px;
     width: 100%;
     float: left;
     border-radius: 50%;
@@ -73,6 +74,94 @@ body {
   p {
     margin: 0 20px;
   }
+}
 
+.main {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
 
+  h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+  }
+
+  .check {
+    position: absolute;
+    margin-top: 5%;
+  }
+
+  .checkbox-label {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-label::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 75px;
+    border-right: 10px solid @primaryColor;
+    border-bottom: 10px solid @primaryColor;
+    top: 20%;
+    left: 65%;
+    transform: translate(-50%, -50%) rotateZ(40deg);
+  }
+
+  div.box {
+    display: inline-table;
+    background-color: @primaryColor;
+    padding: 25px 50px;
+    text-align: left;
+    margin-left: 15%;
+    border-radius: 15px;
+    margin-bottom: 5%;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    h1,
+    p {
+      padding-left: 20%;
+      color: white;
+
+    }
+
+    button.btn {
+      margin-top: 5%;
+      float: right;
+      background-color: white;
+      color: black;
+      font-weight: 700;
+    }
+  }
+}
+
+.row {
+  margin-left: 5%;
+}
+
+.col-2 {
+  max-width: 16.666667%;
+}
+
+.col-10 {
+  max-width: 83.333333%
 }
