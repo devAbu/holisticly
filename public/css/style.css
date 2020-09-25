@@ -4,6 +4,38 @@ body {
   background-color: #d9d9d9;
   margin-left: 20%;
 }
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-2,
+.col-6,
+.col-10 {
+  position: relative;
+  width: 100%;
+}
+.col-2 {
+  max-width: 16.666667%;
+}
+.col-5 {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+.col-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-10 {
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
 .sidenav {
   height: 100%;
   width: 20%;
@@ -42,7 +74,7 @@ body {
   background-color: #38ffbd;
   border: none;
   border-radius: 5%;
-  padding: 12px 30px;
+  padding: 15px 25px;
   font-size: 20px;
 }
 .navbar {
@@ -61,10 +93,25 @@ body {
 .navbar p {
   margin: 0 20px;
 }
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 2px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 .main {
   display: inline-block;
   width: 100%;
   margin: 0;
+}
+.main .row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .main h2 {
   font-size: 36px;
@@ -75,12 +122,13 @@ body {
 }
 .main .check {
   position: absolute;
-  margin-top: 5%;
+  margin-top: 50%;
+  margin-left: 35%;
 }
 .main .checkbox-label {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   background-color: white;
   border-radius: 50%;
   position: relative;
@@ -88,31 +136,31 @@ body {
 .main input[type="checkbox"] {
   display: none;
 }
-.main .checkbox-label::after {
+.main input[type="checkbox"]:checked ~ .checkbox-label::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 75px;
-  border-right: 10px solid #38ffbd;
-  border-bottom: 10px solid #38ffbd;
-  top: 20%;
+  width: 15px;
+  height: 50px;
+  border-right: 8px solid #38ffbd;
+  border-bottom: 8px solid #38ffbd;
+  top: 25%;
   left: 65%;
   transform: translate(-50%, -50%) rotateZ(40deg);
 }
 .main div.box {
   display: inline-table;
   background-color: #38ffbd;
-  padding: 25px 50px;
+  padding: 20px 20px;
   text-align: left;
-  margin-left: 15%;
   border-radius: 15px;
   margin-bottom: 5%;
+  width: 70%;
 }
 .main div.box h1 {
-  font-size: 36px;
+  font-size: 28px;
 }
 .main div.box p {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
 }
 .main div.box h1,
@@ -126,13 +174,186 @@ body {
   background-color: white;
   color: black;
   font-weight: 700;
+  border-radius: 5px;
+  padding: 15px;
 }
-.row {
-  margin-left: 5%;
+.wq-test {
+  padding: 15px 10%;
+  text-align: left;
 }
-.col-2 {
-  max-width: 16.666667%;
+.wq-test div.box {
+  display: inline-table;
+  background-color: #38ffbd;
+  padding: 10px 20px;
+  text-align: left;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  width: 80%;
 }
-.col-10 {
-  max-width: 83.333333%;
+.wq-test div.box h1 {
+  font-size: 28px;
+}
+.wq-test div.box p {
+  font-size: 18px;
+  max-width: 380px;
+  margin-bottom: 0px;
+}
+.wq-test div.box h1,
+.wq-test div.box p {
+  padding-left: 20%;
+  color: white;
+}
+.wq-test div.box button.btn {
+  float: right;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.wq-test .tabs {
+  text-align: left;
+  width: 80%;
+}
+.wq-test .tabs .btn:nth-child(1),
+.wq-test .tabs .btn:nth-child(5) {
+  margin-left: 0px;
+}
+.wq-test .tabs .btn {
+  margin: 0 0px 20px 15px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 20px 40px;
+}
+.wq-test .tabs .btn.active {
+  background-color: #38ffbd;
+  color: white;
+}
+.wq-test .available-services {
+  width: 90%;
+}
+.wq-test .available-services h1 {
+  text-align: left;
+  color: #b3b3b3;
+  font-size: 26px;
+  margin-bottom: 0px;
+}
+.wq-test .available-services .row .col-6:nth-child(2) .card,
+.wq-test .available-services .row .col-6:nth-child(2) .card,
+.wq-test .available-services .row .col-6:nth-child(4) .card {
+  margin-left: 0;
+}
+.wq-test .available-services .col-6 .card,
+.wq-test .available-services .col-5 .card {
+  margin-top: 3%;
+  margin-left: 15px;
+  margin-bottom: 5%;
+  width: 85%;
+  height: 200px;
+  text-align: left;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+}
+.wq-test .available-services .col-6 .card-body,
+.wq-test .available-services .col-5 .card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+.wq-test .available-services .col-6 .card-body .bg,
+.wq-test .available-services .col-5 .card-body .bg {
+  height: 100%;
+  background-image: url("https://cdn.houseofcoco.net/uploads/2019/04/t1-5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: contrast(75%);
+  -webkit-filter: contrast(75%);
+}
+.wq-test .available-services .col-6 .card-body .bg-text,
+.wq-test .available-services .col-5 .card-body .bg-text {
+  color: white;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-20%, -50%);
+  z-index: 2;
+  text-align: left;
+}
+.wq-test .available-services .col-6 .card-body .bg-text h2,
+.wq-test .available-services .col-5 .card-body .bg-text h2 {
+  margin-bottom: 5px;
+}
+.wq-test .available-services .col-6 .card-body .bg-text small,
+.wq-test .available-services .col-5 .card-body .bg-text small {
+  font-size: medium;
+}
+.wq-test .available-services .col-6 .card-footer button:nth-child(1),
+.wq-test .available-services .col-5 .card-footer button:nth-child(1) {
+  width: 50%;
+  margin: 0;
+  background-color: white;
+  color: black;
+}
+.wq-test .available-services .col-6 .card-footer button:nth-child(2),
+.wq-test .available-services .col-5 .card-footer button:nth-child(2) {
+  width: 50%;
+  margin: 0;
+  background-color: white;
+  color: #38ffbd;
+  margin-left: -10px;
+}
+.wq-test .treatments {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 5%;
+}
+.wq-test .treatments .btn {
+  height: 65px;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 15px;
+}
+.wq-test .treatments-card .bg-text h2 {
+  font-size: 26px;
+}
+.wq-test .treatments-card .card-footer button {
+  padding: 15px 20px;
+}
+.third {
+  left: 18% !important;
+}
+.tabs.treatments .btn:nth-child(4),
+.tabs.treatments .btn:nth-child(1) {
+  margin-left: 0px;
+}
+.tabs.treatments .btn:nth-child(5) {
+  margin-left: 15px;
+}
+.media {
+  height: 300px !important;
+}
+.media .card-footer {
+  position: relative;
+  height: 100px;
+  padding: 0px 10px;
+}
+.media .card-footer p {
+  font-size: 20px;
+  max-width: 80%;
+}
+.media .card-footer svg {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  color: #38ffbd;
 }

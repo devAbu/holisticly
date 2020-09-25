@@ -19,21 +19,22 @@ app.get('/', (req, res) => {
 })
 
 app.get('/services', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/views/index.html'));
+  res.sendFile(path.join(__dirname + '/src/views/services.html'));
 })
 
 app.get('/coaching', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/views/index.html'));
+  res.sendFile(path.join(__dirname + '/src/views/coaching.html'));
 })
 
 app.get('/media', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/views/index.html'));
+  res.sendFile(path.join(__dirname + '/src/views/media.html'));
 })
 
 app.get('/treatments', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/views/index.html'));
+  res.sendFile(path.join(__dirname + '/src/views/treatments.html'));
 })
 
+/* 
 app.get('/wellbeing/test', (req, res) => {
   res.sendFile(path.join(__dirname + '/src/views/index.html'));
 })
@@ -52,7 +53,8 @@ app.get('/profile', (req, res) => {
 
 app.get('/profile/edit', (req, res) => {
   console.log('juhu')
-})
+}) 
+ */
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);
