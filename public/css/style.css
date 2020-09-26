@@ -302,7 +302,7 @@ body {
 }
 .wq-test .available-services .col-6 .card-footer button:nth-child(1),
 .wq-test .available-services .col-5 .card-footer button:nth-child(1) {
-  width: 50%;
+  width: 48%;
   margin: 0;
   background-color: white;
   color: black;
@@ -310,7 +310,7 @@ body {
 }
 .wq-test .available-services .col-6 .card-footer button:nth-child(2),
 .wq-test .available-services .col-5 .card-footer button:nth-child(2) {
-  width: 50%;
+  width: 48%;
   margin: 0;
   background-color: white;
   color: #38ffbd;
