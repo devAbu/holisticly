@@ -18,25 +18,27 @@ var urlencodedParser = bodyparser.urlencoded({
   extended: false
 })
 
+const options = {
+  hostname: 'https://holisticly-app.herokuapp.com/',
+  port: 443,
+  path: '/todos',
+  method: 'GET'
+}
+
+const request = https.request(options, res => {
+  console.log(`statusCode: ${res.statusCode}`)
+
+  res.on('data', d => {
+    process.stdout.write(d)
+  })
+})
+
+request.on('error', error => {
+  console.error(error)
+})
+
 app.get('/', (req, res) => {
-  const options = {
-    hostname: 'https://holisticly-app.herokuapp.com/',
-    port: 443,
-    path: '/todos',
-    method: 'GET'
-  }
 
-  const request = https.request(options, res => {
-    console.log(`statusCode: ${res.statusCode}`)
-
-    res.on('data', d => {
-      process.stdout.write(d)
-    })
-  })
-
-  request.on('error', error => {
-    console.error(error)
-  })
   /* res.sendFile(path.join(__dirname + '/src/views/index.html')); */
 })
 
