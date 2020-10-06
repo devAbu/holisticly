@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyparser = require('body-parser');
+const https = require('https')
 const {
   request
 } = require('http');
@@ -18,19 +19,24 @@ var urlencodedParser = bodyparser.urlencoded({
 })
 
 app.get('/', (req, res) => {
-  request({
-      url: 'https://api.linkedin.com/v1/company-search'
-    },
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({
-          type: 'error',
-          message: error.message
-        });
-      }
+  const options = {
+    hostname: 'https://holisticly-app.herokuapp.com/',
+    port: 443,
+    path: '/todos',
+    method: 'GET'
+  }
 
-      res.json(JSON.parse(body));
+  const request = https.request(options, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+
+    res.on('data', d => {
+      process.stdout.write(d)
     })
+  })
+
+  request.on('error', error => {
+    console.error(error)
+  })
   /* res.sendFile(path.join(__dirname + '/src/views/index.html')); */
 })
 
