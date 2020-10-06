@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
-const bodyparser = require('body-parser')
+const bodyparser = require('body-parser');
+const {
+  request
+} = require('http');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,7 +18,20 @@ var urlencodedParser = bodyparser.urlencoded({
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/views/index.html'));
+  request({
+      url: 'https://api.linkedin.com/v1/company-search'
+    },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({
+          type: 'error',
+          message: error.message
+        });
+      }
+
+      res.json(JSON.parse(body));
+    })
+  /* res.sendFile(path.join(__dirname + '/src/views/index.html')); */
 })
 
 app.get('/services', (req, res) => {
