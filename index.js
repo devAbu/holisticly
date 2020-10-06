@@ -26,6 +26,10 @@ var urlencodedParser = bodyparser.urlencoded({
 } */
 
 app.get('/test', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   https.get('https://api.linkedin.com/v1/company-search', (resp) => {
     let data = '';
 
