@@ -18,26 +18,28 @@ var urlencodedParser = bodyparser.urlencoded({
   extended: false
 })
 
-const options = {
+/* const options = {
   hostname: 'https://holisticly-app.herokuapp.com/',
   port: 443,
   path: '/todos',
   method: 'GET'
-}
+} */
 
-const req = https.request(options, res => {
-  console.log(`statusCode: ${res.statusCode}`)
+app.get('/test', (req, res) => {
+  const request = https.get("https://api.linkedin.com/v1/company-search", res => {
+    console.log(`statusCode: ${res.statusCode}`)
 
-  res.on('data', d => {
-    process.stdout.write(d)
+    res.on('data', d => {
+      process.stdout.write(d)
+    })
   })
-})
 
 
-req.on('error', error => {
-  console.error(error)
+  request.on('error', error => {
+    console.error(error)
+  })
+  request.end()
 })
-req.end()
 
 app.get('/', (req, res) => {
 
