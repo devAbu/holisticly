@@ -25,7 +25,7 @@ const options = {
   method: 'GET'
 }
 
-const request = https.request(options, res => {
+const req = https.request(options, res => {
   console.log(`statusCode: ${res.statusCode}`)
 
   res.on('data', d => {
@@ -33,9 +33,11 @@ const request = https.request(options, res => {
   })
 })
 
-request.on('error', error => {
+
+req.on('error', error => {
   console.error(error)
 })
+req.end()
 
 app.get('/', (req, res) => {
 
