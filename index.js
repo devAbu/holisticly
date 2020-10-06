@@ -26,19 +26,22 @@ var urlencodedParser = bodyparser.urlencoded({
 } */
 
 app.get('/test', (req, res) => {
-  const request = https.get("https://api.linkedin.com/v1/company-search", res => {
-    console.log(`statusCode: ${res.statusCode}`)
+  https.get('https://api.linkedin.com/v1/company-search', (resp) => {
+    let data = '';
 
-    res.on('data', d => {
-      process.stdout.write(d)
-    })
-  })
+    // A chunk of data has been recieved.
+    resp.on('data', (chunk) => {
+      data += chunk;
+    });
 
+    // The whole response has been received. Print out the result.
+    resp.on('end', () => {
+      console.log(JSON.parse(data).explanation);
+    });
 
-  request.on('error', error => {
-    console.error(error)
-  })
-  request.end()
+  }).on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
 })
 
 app.get('/', (req, res) => {
